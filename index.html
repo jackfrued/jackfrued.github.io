@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>骆昊的技术专栏</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="骆昊的技术专栏">
+<meta property="og:url" content="http://example.com/index.html">
+<meta property="og:site_name" content="骆昊的技术专栏">
+<meta property="og:locale">
+<meta property="article:author" content="骆昊">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="骆昊的技术专栏" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 5.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">骆昊的技术专栏</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">传道 授业 解惑</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Suche"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Suche"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-PythonIdiom" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2019/07/01/PythonIdiom/" class="article-date">
+  <time class="dt-published" datetime="2019-06-30T16:00:00.000Z" itemprop="datePublished">2019-07-01</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Python%E8%BF%9B%E9%98%B6/">Python进阶</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2019/07/01/PythonIdiom/">Python编程惯例</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="Python编程惯例"><a href="#Python编程惯例" class="headerlink" title="Python编程惯例"></a>Python编程惯例</h2><p>“惯例”这个词指的是“习惯的做法，常规的办法，一贯的做法”，与这个词对应的英文单词叫“idiom”。由于Python跟其他很多编程语言在语法和使用上还是有比较显著的差别，因此作为一个Python开发者如果不能掌握这些惯例，就无法写出“Pythonic”的代码。下面我们总结了一些在Python开发中的惯用的代码。</p>
+<ol>
+<li><p>让代码既可以被导入又可以被执行。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>用下面的方式判断逻辑“真”或“假”。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> x:</span><br><span class="line"><span class="keyword">if</span> <span class="keyword">not</span> x:</span><br></pre></td></tr></table></figure>
+<p><strong>好</strong>的代码：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">name = <span class="string">&#x27;jackfrued&#x27;</span></span><br><span class="line">fruits = [<span class="string">&#x27;apple&#x27;</span>, <span class="string">&#x27;orange&#x27;</span>, <span class="string">&#x27;grape&#x27;</span>]</span><br><span class="line">owners = &#123;<span class="string">&#x27;1001&#x27;</span>: <span class="string">&#x27;骆昊&#x27;</span>, <span class="string">&#x27;1002&#x27;</span>: <span class="string">&#x27;王大锤&#x27;</span>&#125;</span><br><span class="line"><span class="keyword">if</span> name <span class="keyword">and</span> fruits <span class="keyword">and</span> owners:</span><br><span class="line">    print(<span class="string">&#x27;I love fruits!&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<p><strong>不好</strong>的代码：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">name = <span class="string">&#x27;jackfrued&#x27;</span></span><br><span class="line">fruits = [<span class="string">&#x27;apple&#x27;</span>, <span class="string">&#x27;orange&#x27;</span>, <span class="string">&#x27;grape&#x27;</span>]</span><br><span class="line">owners = &#123;<span class="string">&#x27;1001&#x27;</span>: <span class="string">&#x27;骆昊&#x27;</span>, <span class="string">&#x27;1002&#x27;</span>: <span class="string">&#x27;王大锤&#x27;</span>&#125;</span><br><span class="line"><span class="keyword">if</span> name != <span class="string">&#x27;&#x27;</span> <span class="keyword">and</span> <span class="built_in">len</span>(fruits) &gt; <span class="number">0</span> <span class="keyword">and</span> owners != &#123;&#125;:</span><br><span class="line">    print(<span class="string">&#x27;I love fruits!&#x27;</span>)</span><br></pre></td></tr></table></figure></li>
+<li><p>善于使用in运算符。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> x <span class="keyword">in</span> items: <span class="comment"># 包含</span></span><br><span class="line"><span class="keyword">for</span> x <span class="keyword">in</span> items: <span class="comment"># 迭代</span></span><br></pre></td></tr></table></figure>
+<p><strong>好</strong>的代码：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">name = <span class="string">&#x27;Hao LUO&#x27;</span></span><br><span class="line"><span class="keyword">if</span> <span class="string">&#x27;L&#x27;</span> <span class="keyword">in</span> name:</span><br><span class="line">    print(<span class="string">&#x27;The name has an L in it.&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<p><strong>不好</strong>的代码：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">name = <span class="string">&#x27;Hao LUO&#x27;</span></span><br><span class="line"><span class="keyword">if</span> name.find(<span class="string">&#x27;L&#x27;</span>) != -<span class="number">1</span>:</span><br><span class="line">    print(<span class="string">&#x27;This name has an L in it!&#x27;</span>)</span><br></pre></td></tr></table></figure></li>
+<li><p>不使用临时变量交换两个值。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a, b = b, a</span><br></pre></td></tr></table></figure></li>
+<li><p>用序列构建字符串。</p>
+<p><strong>好</strong>的代码：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">chars = [<span class="string">&#x27;j&#x27;</span>, <span class="string">&#x27;a&#x27;</span>, <span class="string">&#x27;c&#x27;</span>, <span class="string">&#x27;k&#x27;</span>, <span class="string">&#x27;f&#x27;</span>, <span class="string">&#x27;r&#x27;</span>, <span class="string">&#x27;u&#x27;</span>, <span class="string">&#x27;e&#x27;</span>, <span class="string">&#x27;d&#x27;</span>]</span><br><span class="line">name = <span class="string">&#x27;&#x27;</span>.join(chars)</span><br><span class="line">print(name)  <span class="comment"># jackfrued</span></span><br></pre></td></tr></table></figure>
+<p><strong>不好</strong>的代码：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">chars = [<span class="string">&#x27;j&#x27;</span>, <span class="string">&#x27;a&#x27;</span>, <span class="string">&#x27;c&#x27;</span>, <span class="string">&#x27;k&#x27;</span>, <span class="string">&#x27;f&#x27;</span>, <span class="string">&#x27;r&#x27;</span>, <span class="string">&#x27;u&#x27;</span>, <span class="string">&#x27;e&#x27;</span>, <span class="string">&#x27;d&#x27;</span>]</span><br><span class="line">name = <span class="string">&#x27;&#x27;</span></span><br><span class="line"><span class="keyword">for</span> char <span class="keyword">in</span> chars:</span><br><span class="line">    name += char</span><br><span class="line">print(name)  <span class="comment"># jackfrued</span></span><br></pre></td></tr></table></figure></li>
+<li><p>EAFP优于LBYL。</p>
+<p>EAFP - <strong>E</strong>asier to <strong>A</strong>sk <strong>F</strong>orgiveness than <strong>P</strong>ermission.</p>
+<p>LBYL - <strong>L</strong>ook <strong>B</strong>efore <strong>Y</strong>ou <strong>L</strong>eap.</p>
+<p><strong>好</strong>的代码：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">d = &#123;<span class="string">&#x27;x&#x27;</span>: <span class="string">&#x27;5&#x27;</span>&#125;</span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    value = <span class="built_in">int</span>(d[<span class="string">&#x27;x&#x27;</span>])</span><br><span class="line">    print(value)</span><br><span class="line"><span class="keyword">except</span> (KeyError, TypeError, ValueError):</span><br><span class="line">    value = <span class="literal">None</span></span><br></pre></td></tr></table></figure>
+<p><strong>不好</strong>的代码：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">d = &#123;<span class="string">&#x27;x&#x27;</span>: <span class="string">&#x27;5&#x27;</span>&#125;</span><br><span class="line"><span class="keyword">if</span> <span class="string">&#x27;x&#x27;</span> <span class="keyword">in</span> d <span class="keyword">and</span> <span class="built_in">isinstance</span>(d[<span class="string">&#x27;x&#x27;</span>], <span class="built_in">str</span>) \</span><br><span class="line">		<span class="keyword">and</span> d[<span class="string">&#x27;x&#x27;</span>].isdigit():</span><br><span class="line">    value = <span class="built_in">int</span>(d[<span class="string">&#x27;x&#x27;</span>])</span><br><span class="line">    print(value)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    value = <span class="literal">None</span></span><br></pre></td></tr></table></figure></li>
+<li><p>使用enumerate进行迭代。</p>
+<p><strong>好</strong>的代码：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">fruits = [<span class="string">&#x27;orange&#x27;</span>, <span class="string">&#x27;grape&#x27;</span>, <span class="string">&#x27;pitaya&#x27;</span>, <span class="string">&#x27;blueberry&#x27;</span>]</span><br><span class="line"><span class="keyword">for</span> index, fruit <span class="keyword">in</span> <span class="built_in">enumerate</span>(fruits):</span><br><span class="line">	print(index, <span class="string">&#x27;:&#x27;</span>, fruit)</span><br></pre></td></tr></table></figure>
+<p><strong>不好</strong>的代码：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">fruits = [<span class="string">&#x27;orange&#x27;</span>, <span class="string">&#x27;grape&#x27;</span>, <span class="string">&#x27;pitaya&#x27;</span>, <span class="string">&#x27;blueberry&#x27;</span>]</span><br><span class="line">index = <span class="number">0</span></span><br><span class="line"><span class="keyword">for</span> fruit <span class="keyword">in</span> fruits:</span><br><span class="line">    print(index, <span class="string">&#x27;:&#x27;</span>, fruit)</span><br><span class="line">    index += <span class="number">1</span></span><br></pre></td></tr></table></figure></li>
+<li><p>用生成式生成列表。</p>
+<p><strong>好</strong>的代码：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">data = [<span class="number">7</span>, <span class="number">20</span>, <span class="number">3</span>, <span class="number">15</span>, <span class="number">11</span>]</span><br><span class="line">result = [num * <span class="number">3</span> <span class="keyword">for</span> num <span class="keyword">in</span> data <span class="keyword">if</span> num &gt; <span class="number">10</span>]</span><br><span class="line">print(result)  <span class="comment"># [60, 45, 33]</span></span><br></pre></td></tr></table></figure>
+<p><strong>不好</strong>的代码：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">data = [<span class="number">7</span>, <span class="number">20</span>, <span class="number">3</span>, <span class="number">15</span>, <span class="number">11</span>]</span><br><span class="line">result = []</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> data:</span><br><span class="line">    <span class="keyword">if</span> i &gt; <span class="number">10</span>:</span><br><span class="line">        result.append(i * <span class="number">3</span>)</span><br><span class="line">print(result)  <span class="comment"># [60, 45, 33]</span></span><br></pre></td></tr></table></figure></li>
+<li><p>用zip组合键和值来创建字典。</p>
+<p><strong>好</strong>的代码：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">keys = [<span class="string">&#x27;1001&#x27;</span>, <span class="string">&#x27;1002&#x27;</span>, <span class="string">&#x27;1003&#x27;</span>]</span><br><span class="line">values = [<span class="string">&#x27;骆昊&#x27;</span>, <span class="string">&#x27;王大锤&#x27;</span>, <span class="string">&#x27;白元芳&#x27;</span>]</span><br><span class="line">d = <span class="built_in">dict</span>(<span class="built_in">zip</span>(keys, values))</span><br><span class="line">print(d)</span><br></pre></td></tr></table></figure>
+<p><strong>不好</strong>的代码：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">keys = [<span class="string">&#x27;1001&#x27;</span>, <span class="string">&#x27;1002&#x27;</span>, <span class="string">&#x27;1003&#x27;</span>]</span><br><span class="line">values = [<span class="string">&#x27;骆昊&#x27;</span>, <span class="string">&#x27;王大锤&#x27;</span>, <span class="string">&#x27;白元芳&#x27;</span>]</span><br><span class="line">d = &#123;&#125;</span><br><span class="line"><span class="keyword">for</span> i, key <span class="keyword">in</span> <span class="built_in">enumerate</span>(keys):</span><br><span class="line">    d[key] = values[i]</span><br><span class="line">print(d)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><strong>说明</strong>：这篇文章的内容来自于网络，有兴趣的读者可以阅读<a target="_blank" rel="noopener" href="http://safehammad.com/downloads/python-idioms-2014-01-16.pdf">原文</a>。</p>
+</blockquote>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2019/07/01/PythonIdiom/" data-id="ckk7wyhk600043sj48dfmdtlf" data-title="Python编程惯例" class="article-share-link">Teilen</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PEP8/" rel="tag">PEP8</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/" rel="tag">Python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Pythonic/" rel="tag">Pythonic</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-PythonBooks" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2019/06/01/PythonBooks/" class="article-date">
+  <time class="dt-published" datetime="2019-05-31T16:00:00.000Z" itemprop="datePublished">2019-06-01</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Python%E5%9F%BA%E7%A1%80/">Python基础</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2019/06/01/PythonBooks/">Python参考书籍</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="Python参考书籍"><a href="#Python参考书籍" class="headerlink" title="Python参考书籍"></a>Python参考书籍</h2><h3 id="入门读物"><a href="#入门读物" class="headerlink" title="入门读物"></a>入门读物</h3><ol>
+<li>《Python基础教程》（<em>Beginning Python From Novice to Professional</em>）</li>
+<li>《Python学习手册》（<em>Learning Python</em>）</li>
+<li>《Python编程》（<em>Programming Python</em>）</li>
+<li>《Python Cookbook》</li>
+<li>《Python程序设计》（<em>Python Programming: An Introduction to Computer Science</em>）</li>
+<li>《Modern Python Cookbook》</li>
+</ol>
+<h3 id="进阶读物"><a href="#进阶读物" class="headerlink" title="进阶读物"></a>进阶读物</h3><ol>
+<li>《Python核心编程》（<em>Core Python Applications Programming</em>）</li>
+<li>《流畅的Python》（<em>Fluent Python</em>）</li>
+<li>《Effective Python：编写高质量Python代码的59个有效方法》（<em>Effective Python 59 Specific Ways to Write Better Python</em>）</li>
+<li>《Python设计模式》（<em>Learning Python Design Patterns</em>）</li>
+<li>《Python高级编程》（<em>Expert Python Programming</em>）</li>
+<li>《Python性能分析与优化》（<em>Mastering Python High Performance</em>）</li>
+</ol>
+<h3 id="Web框架"><a href="#Web框架" class="headerlink" title="Web框架"></a>Web框架</h3><ol>
+<li>《Django基础教程》（<em>Tango with Django</em>）</li>
+<li>《轻量级Django》（<em>Lightweight Django</em>）</li>
+<li>《Python Web开发：测试驱动方法》（<em>Test-Driven Development with Python</em>）</li>
+<li>《Web Development with Django Cookbook》</li>
+<li>《Test-Driven Development with Django》</li>
+<li>《Django Project Blueprints 》</li>
+<li>《Flask Web开发：基于Python的Web应用开发实战》（<em>Flask Web Development: Developing Web Applications with Python</em>）</li>
+<li>《深入理解Flask》（<em>Mastering Flask</em>）</li>
+</ol>
+<h3 id="爬虫开发"><a href="#爬虫开发" class="headerlink" title="爬虫开发"></a>爬虫开发</h3><ol>
+<li>《用Python写网络爬虫》（<em>Web Scraping with Python</em>）</li>
+<li>《精通Python爬虫框架Scrapy》（<em>Learning Scrapy</em>）</li>
+<li>《Python网络数据采集》（<em>Web Scraping with Python</em>）</li>
+<li>《Python爬虫开发与项目实战》</li>
+<li>《Python 3网络爬虫开发实战》</li>
+</ol>
+<h3 id="数据分析"><a href="#数据分析" class="headerlink" title="数据分析"></a>数据分析</h3><ol>
+<li>《利用Python进行数据分析》（<em>Python for Data Analysis</em>）</li>
+<li>《Python数据科学手册》（<em>Python Data Science Handbook</em>）</li>
+<li>《Python金融大数据分析》（<em>Python for Finance</em>）</li>
+<li>《Python数据可视化编程实战》（<em>Python Data Visualization Cookbook</em>）</li>
+<li>《Python数据处理》（<em>Data Wrangling with Python</em>）</li>
+</ol>
+<h3 id="机器学习"><a href="#机器学习" class="headerlink" title="机器学习"></a>机器学习</h3><ol>
+<li>《Python机器学习基础教程》（<em>Introduction to Machine Learning with Python</em>）</li>
+<li>《Python机器学习实践指南》（<em>Python Machine Learning Blueprints</em>）</li>
+<li>《Python Machine Learning Case Studies》</li>
+<li>《Python机器学习实践：测试驱动的开发方法》（<em>Thoughtful Machine Learning with Python A Test Driven Approach</em>）</li>
+<li>《Python机器学习经典实例》（<em>Python Machine Learning Cookbook</em>）</li>
+<li>《TensorFlow：实战Google深度学习框架》</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2019/06/01/PythonBooks/" data-id="ckk7wyhk000013sj4dxvq6t2e" data-title="Python参考书籍" class="article-share-link">Teilen</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/" rel="tag">Python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%8F%82%E8%80%83%E4%B9%A6/" rel="tag">参考书</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-PEP8" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2019/05/01/PEP8/" class="article-date">
+  <time class="dt-published" datetime="2019-04-30T16:00:00.000Z" itemprop="datePublished">2019-05-01</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Python%E5%9F%BA%E7%A1%80/">Python基础</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2019/05/01/PEP8/">PEP 8风格指南</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="PEP-8风格指南"><a href="#PEP-8风格指南" class="headerlink" title="PEP 8风格指南"></a>PEP 8风格指南</h2><p>PEP是Python Enhancement Proposal的缩写，通常翻译为“Python增强提案”。每个PEP都是一份为Python社区提供的指导Python往更好的方向发展的技术文档，其中的第8号增强提案（PEP 8）是针对Python语言编订的代码风格指南。尽管我们可以在保证语法没有问题的前提下随意书写Python代码，但是在实际开发中，采用一致的风格书写出可读性强的代码是每个专业的程序员应该做到的事情，也是每个公司的编程规范中会提出的要求，这些在多人协作开发一个项目（团队开发）的时候显得尤为重要。我们可以从Python官方网站的<a target="_blank" rel="noopener" href="https://www.python.org/dev/peps/pep-0008/">PEP 8链接</a>中找到该文档，下面我们对该文档的关键部分做一个简单的总结。</p>
+<h3 id="空格的使用"><a href="#空格的使用" class="headerlink" title="空格的使用"></a>空格的使用</h3><ol>
+<li><u>使用空格来表示缩进而不要用制表符（Tab）。</u>这一点对习惯了其他编程语言的人来说简直觉得不可理喻，因为绝大多数的程序员都会用Tab来表示缩进，但是要知道Python并没有像C/C++或Java那样的用花括号来构造一个代码块的语法，在Python中分支和循环结构都使用缩进来表示哪些代码属于同一个级别，鉴于此Python代码对缩进以及缩进宽度的依赖比其他很多语言都强得多。在不同的编辑器中，Tab的宽度可能是2、4或8个字符，甚至是其他更离谱的值，用Tab来表示缩进对Python代码来说可能是一场灾难。</li>
+<li><u>和语法相关的每一层缩进都用4个空格来表示。</u></li>
+<li><u>每行的字符数不要超过79个字符，如果表达式因太长而占据了多行，除了首行之外的其余各行都应该在正常的缩进宽度上再加上4个空格。</u></li>
+<li><u>函数和类的定义，代码前后都要用两个空行进行分隔。</u></li>
+<li><u>在同一个类中，各个方法之间应该用一个空行进行分隔。</u></li>
+<li><u>二元运算符的左右两侧应该保留一个空格，而且只要一个空格就好。</u></li>
+</ol>
+<h3 id="标识符命名"><a href="#标识符命名" class="headerlink" title="标识符命名"></a>标识符命名</h3><p>PEP 8倡导用不同的命名风格来命名Python中不同的标识符，以便在阅读代码时能够通过标识符的名称来确定该标识符在Python中扮演了怎样的角色（在这一点上，Python自己的内置模块以及某些第三方模块都做得并不是很好）。</p>
+<ol>
+<li><u>变量、函数和属性应该使用小写字母来拼写，如果有多个单词就使用下划线进行连接。</u></li>
+<li><u>类中受保护的实例属性，应该以一个下划线开头。</u></li>
+<li><u>类中私有的实例属性，应该以两个下划线开头。</u></li>
+<li><u>类和异常的命名，应该每个单词首字母大写。</u></li>
+<li><u>模块级别的常量，应该采用全大写字母，如果有多个单词就用下划线进行连接。</u></li>
+<li><u>类的实例方法，应该把第一个参数命名为<code>self</code>以表示对象自身。</u></li>
+<li><u>类的类方法，应该把第一个参数命名为<code>cls</code>以表示该类自身。</u></li>
+</ol>
+<h3 id="表达式和语句"><a href="#表达式和语句" class="headerlink" title="表达式和语句"></a>表达式和语句</h3><p>在Python之禅（可以使用<code>import this</code>查看）中有这么一句名言：“There should be one– and preferably only one –obvious way to do it.”，翻译成中文是“做一件事应该有而且最好只有一种确切的做法”，这句话传达的思想在PEP 8中也是无处不在的。</p>
+<ol>
+<li><u>采用内联形式的否定词，而不要把否定词放在整个表达式的前面。</u>例如<code>if a is not b</code>就比<code>if not a is b</code>更容易让人理解。</li>
+<li>不要用检查长度的方式来判断字符串、列表等是否为<code>None</code>或者没有元素，应该用<code>if not x</code>这样的写法来检查它。</li>
+<li><u>就算<code>if</code>分支、<code>for</code>循环、<code>except</code>异常捕获等中只有一行代码，也不要将代码和<code>if</code>、<code>for</code>、<code>except</code>等写在一起，分开写才会让代码更清晰。</u></li>
+<li><u><code>import</code>语句总是放在文件开头的地方。</u></li>
+<li><u>引入模块的时候，<code>from math import sqrt</code>比<code>import math</code>更好。</u></li>
+<li><u>如果有多个<code>import</code>语句，应该将其分为三部分，从上到下分别是Python<strong>标准模块</strong>、<strong>第三方模块</strong>和<strong>自定义模块</strong>，每个部分内部应该按照模块名称的<strong>字母表顺序</strong>来排列。</u></li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2019/05/01/PEP8/" data-id="ckk7wyhjs00003sj4cpec9ac1" data-title="PEP 8风格指南" class="article-share-link">Teilen</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PEP8/" rel="tag">PEP8</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PyLint/" rel="tag">PyLint</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/" rel="tag">Python</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-ZenOfPython" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2019/05/01/ZenOfPython/" class="article-date">
+  <time class="dt-published" datetime="2019-04-30T16:00:00.000Z" itemprop="datePublished">2019-05-01</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2019/05/01/ZenOfPython/">Zen Of Python</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="Zen-of-Python（Python之禅）"><a href="#Zen-of-Python（Python之禅）" class="headerlink" title="Zen of Python（Python之禅）"></a>Zen of Python（Python之禅）</h2><p>Beautiful is better than ugly. （优美比丑陋好）<br>Explicit is better than implicit.（清晰比晦涩好）<br>Simple is better than complex.（简单比复杂好）<br>Complex is better than complicated.（复杂比错综复杂好）<br>Flat is better than nested.（扁平比嵌套好）<br>Sparse is better than dense.（稀疏比密集好）<br>Readability counts.（可读性很重要）<br>Special cases aren’t special enough to break the rules.（特殊情况也不应该违反这些规则）<br>Although practicality beats purity.（但现实往往并不那么完美）<br>Errors should never pass silently.（异常不应该被静默处理）<br>Unless explicitly silenced.（除非你希望如此）<br>In the face of ambiguity, refuse the temptation to guess.（遇到模棱两可的地方，不要胡乱猜测）<br>There should be one– and preferably only one –obvious way to do it.（肯定有一种通常也是唯一一种最佳的解决方案）<br>Although that way may not be obvious at first unless you’re Dutch.（虽然这种方案并不是显而易见的，因为你不是那个荷兰人^这里指的是Python之父Guido^）<br>Now is better than never.（现在开始做比不做好）<br>Although never is often better than *right* now.（不做比盲目去做好^极限编程中的YAGNI原则^）<br>If the implementation is hard to explain, it’s a bad idea.（如果一个实现方案难于理解，它就不是一个好的方案）<br>If the implementation is easy to explain, it may be a good idea.（如果一个实现方案易于理解，它很有可能是一个好的方案）<br>Namespaces are one honking great idea – let’s do more of those!（命名空间非常有用，我们应当多加利用）</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2019/05/01/ZenOfPython/" data-id="ckk7wyhk800053sj42mxu5jkg" data-title="Zen Of Python" class="article-share-link">Teilen</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Kategorien</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Python%E5%9F%BA%E7%A1%80/">Python基础</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python%E8%BF%9B%E9%98%B6/">Python进阶</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/PEP8/" rel="tag">PEP8</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PyLint/" rel="tag">PyLint</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/" rel="tag">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Pythonic/" rel="tag">Pythonic</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8F%82%E8%80%83%E4%B9%A6/" rel="tag">参考书</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/PEP8/" style="font-size: 15px;">PEP8</a> <a href="/tags/PyLint/" style="font-size: 10px;">PyLint</a> <a href="/tags/Python/" style="font-size: 20px;">Python</a> <a href="/tags/Pythonic/" style="font-size: 10px;">Pythonic</a> <a href="/tags/%E5%8F%82%E8%80%83%E4%B9%A6/" style="font-size: 10px;">参考书</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archiv</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">July 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">letzter Beitrag</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/07/01/PythonIdiom/">Python编程惯例</a>
+          </li>
+        
+          <li>
+            <a href="/2019/06/01/PythonBooks/">Python参考书籍</a>
+          </li>
+        
+          <li>
+            <a href="/2019/05/01/PEP8/">PEP 8风格指南</a>
+          </li>
+        
+          <li>
+            <a href="/2019/05/01/ZenOfPython/">Zen Of Python</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2021 骆昊<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
